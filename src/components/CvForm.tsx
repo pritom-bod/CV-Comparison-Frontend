@@ -28,7 +28,7 @@ const schema = z.object({
 });
 
 // Types
-type FormInput = z.infer<typeof schema>; // { tor: string; cv: FileList }
+type FormInput = z.infer<typeof schema>;
 type FormDataOutput = {
   tor: string;
   cv: File;
@@ -49,9 +49,8 @@ export default function CvForm({ onSubmit, loading }: CvFormProps) {
     resolver: zodResolver(schema),
   });
 
-  // Submit handler
   const onFormSubmit: SubmitHandler<FormInput> = (data) => {
-    const file = data.cv[0]; // Pick first file from FileList
+    const file = data.cv[0];
     onSubmit(data.tor, file);
   };
 
