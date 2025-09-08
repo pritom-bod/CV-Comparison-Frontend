@@ -79,7 +79,22 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col items-center p-8">
-      <h1 className="text-4xl font-bold mb-10 text-gray-800">CV Analyzer</h1>
+      {/* Header with logo + company name */}
+      <header className="w-full flex items-center mb-10">
+        <img
+          src="/max.png"   
+          alt="Company Logo"
+          className="h-8 w-14 mr-3"
+        />
+        <h1 className="text-3xl font-bold text-blue-900 dark:text-blue-800">
+            Maxwell
+            <span className="text-red-700 dark:text-red-800"> Stamp</span>
+            <span className="font-bold text-blue-900 dark:text-blue-800"> LTD.</span>
+          </h1>
+      </header>
+
+      <h1 className="text-4xl font-bold mb-10 text-gray-800"><span className="text-red-700 dark:text-red-800">CV</span>
+            <span className="font-bold text-blue-900 dark:text-blue-800"> Analyzer</span></h1>
       <CvForm onSubmit={handleSubmit} loading={loading} />
       {error && <p className="text-red-500 mt-4">{error}</p>}
       {results && <ResultsTable data={results} />}

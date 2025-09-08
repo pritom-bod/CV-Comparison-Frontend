@@ -91,12 +91,14 @@ export default function CvForm({ onSubmit, loading }: CvFormProps) {
       </div>
 
       <button
-        type="submit"
-        disabled={loading}
-        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {loading ? "Analyzing..." : "Analyze CV"}
-      </button>
+  type="submit"
+  disabled={loading}
+  className={`w-full py-2 px-4 rounded-md text-white bg-gradient-to-r from-red-900 to-blue-900 hover:bg-gradient-to-r hover:from-red-800 hover:to-blue-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 ${
+    loading ? 'opacity-50 cursor-not-allowed' : ''
+  }`}
+>
+  {loading ? "Analyzing..." : "Analyze CV"}
+</button>
     </form>
   );
 }

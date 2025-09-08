@@ -247,12 +247,12 @@ export default function ResultsTable({ data }: ResultsTableProps) {
                 <td className="px-6 py-4 text-sm font-bold text-purple-800">{data.scores.specific_skills_competencies.total}%</td>
               </tr>
               {/* Total Score */}
-              <tr className="bg-gray-100">
+              {/* <tr className="bg-gray-100">
                 <td colSpan={2} className="px-6 py-4 font-bold text-gray-900">Total Score (100%)</td>
                 <td className="px-6 py-4 font-bold text-gray-900">{data.scores.total_score}%</td>
-              </tr>
+              </tr> */}
               <tr className="bg-yellow-50">
-                <td colSpan={3} className="px-6 py-4 text-sm font-semibold text-yellow-800">
+                <td colSpan={3} className="px-6 py-4 text-xl font-semibold text-yellow-800">
                   <strong>Recommendation:</strong> {data.recommendation}
                 </td>
               </tr>
@@ -260,6 +260,7 @@ export default function ResultsTable({ data }: ResultsTableProps) {
           </table>
         </div>
       </div>
+      
       {/* Summary Justification Section */}
       <div className="bg-gray-50 p-8 rounded-lg shadow-inner">
         <h3 className="text-xl font-semibold mb-4 text-gray-800">Analysis Summary</h3>
